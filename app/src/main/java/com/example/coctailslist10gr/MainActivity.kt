@@ -1,7 +1,7 @@
 package com.example.coctailslist10gr
 
-import IngredientAdapter
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -25,6 +25,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Enable fullscreen and hide the status bar
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_FULLSCREEN
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                )
+
         // Initialize views
         buttonContainer = findViewById(R.id.buttonContainer)
         ingredientRecyclerView = findViewById(R.id.ingredientRecyclerView)
@@ -34,11 +41,11 @@ class MainActivity : AppCompatActivity() {
         ingredientAdapter = IngredientAdapter(emptyList())
         ingredientRecyclerView.adapter = ingredientAdapter
 
-        // Load data and create buttons
+        // Load cocktails and create buttons
         if (loadCocktails()) {
             createCocktailButtons()
         } else {
-            Toast.makeText(this, "No cocktails found to display.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Failed to load cocktails!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -51,14 +58,14 @@ class MainActivity : AppCompatActivity() {
             reader.close()
             true
         } catch (e: Exception) {
-            Toast.makeText(this, "Failed to load cocktails: ${e.message}", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Error loading cocktails: ${e.message}", Toast.LENGTH_LONG).show()
             false
         }
     }
 
     private fun createCocktailButtons() {
         if (cocktailList.isEmpty()) {
-            Toast.makeText(this, "No cocktails available.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "No cocktails available!", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -66,15 +73,13 @@ class MainActivity : AppCompatActivity() {
             val button = Button(this).apply {
                 text = cocktail.name
                 layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
                 ).apply {
                     setMargins(0, 16, 0, 0) // Add spacing between buttons
                 }
-                setBackgroundColor(resources.getColor(R.color.purple_700, null))
-                setTextColor(resources.getColor(R.color.white, null))
                 setOnClickListener {
-                    // Display ingredients in RecyclerView
+                    // Show ingredients for the clicked cocktail
                     showIngredients(cocktail.ingredients)
                 }
             }

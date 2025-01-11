@@ -1,10 +1,10 @@
 [
   {
     "name": "Mojito",
-    "ingredients": ["Mint leaves", "Lime", "White rum", "Sugar", "Soda water"]
+    "ingredients": ["Mint leaves", "Lime juice", "White rum", "Sugar", "Soda water"]
   },
   {
     "name": "Margarita",
-    "ingredients": ["Tequila", "Lime juice", "Cointreau"]
+    "ingredients": ["Tequila", "Cointreau", "Lime juice"]
   }
 ]

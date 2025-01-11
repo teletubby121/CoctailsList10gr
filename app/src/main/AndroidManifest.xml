@@ -17,12 +17,15 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="landscape"> <!-- Forces landscape orientation -->
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.CoctailsList10gr"> <!-- Correct theme name -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base application theme -->
-    <style name="Theme.CoctailsList10gr" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here -->
+    <!-- Base application theme without action bar -->
+    <style name="Theme.CoctailsList10gr" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Make the app fullscreen -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <!-- Colors for your theme -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryDark">@color/purple_700</item>
         <item name="colorAccent">@color/teal_200</item>
+
+        <!-- Status and Navigation Bar Hidden -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 </resources>

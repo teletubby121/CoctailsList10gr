@@ -1,3 +1,5 @@
+package com.example.coctailslist10gr
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +25,7 @@ class IngredientAdapter(private var ingredients: List<String>) :
 
     override fun getItemCount(): Int = ingredients.size
 
-    // Update the ingredients dynamically
+    // Dynamically update the ingredients list
     fun updateIngredients(newIngredients: List<String>) {
         ingredients = newIngredients
         notifyDataSetChanged()
