@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Mojito",
+    "ingredients": ["Mint leaves", "Lime", "White rum", "Sugar", "Soda water"]
+  },
+  {
+    "name": "Margarita",
+    "ingredients": ["Tequila", "Lime juice", "Cointreau"]
+  }
+]
