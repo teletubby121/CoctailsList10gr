@@ -133,29 +133,28 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Dynamically build details, skipping empty fields and ordering topUp correctly
         val details = mutableListOf<String>()
 
         details.add(cocktail.title.uppercase())
-        details.add(cocktail.base)
+        details.add(cocktail.base.uppercase())
 
-        if (!cocktail.liqueur1.isNullOrEmpty()) details.add(cocktail.liqueur1)
-        if (!cocktail.liqueur2.isNullOrEmpty()) details.add(cocktail.liqueur2)
-        if (!cocktail.puree.isNullOrEmpty()) details.add(cocktail.puree)
-        if (!cocktail.syrup.isNullOrEmpty()) details.add(cocktail.syrup)
-        if (!cocktail.juice.isNullOrEmpty()) details.add(cocktail.juice)
-        if (!cocktail.bitters.isNullOrEmpty()) details.add(cocktail.bitters)
+        if (!cocktail.liqueur1.isNullOrEmpty()) details.add(cocktail.liqueur1.uppercase())
+        if (!cocktail.liqueur2.isNullOrEmpty()) details.add(cocktail.liqueur2.uppercase())
+        if (!cocktail.puree.isNullOrEmpty()) details.add(cocktail.puree.uppercase())
+        if (!cocktail.syrup.isNullOrEmpty()) details.add(cocktail.syrup.uppercase())
+        if (!cocktail.juice.isNullOrEmpty()) details.add(cocktail.juice.uppercase())
+        if (!cocktail.bitters.isNullOrEmpty()) details.add(cocktail.bitters.uppercase())
 
         // Add topUp after bitters, if present
-        if (!cocktail.topUp.isNullOrEmpty()) details.add(cocktail.topUp)
+        if (!cocktail.topUp.isNullOrEmpty()) details.add(cocktail.topUp.uppercase())
 
-        if (!cocktail.garnish.isNullOrEmpty()) details.add(cocktail.garnish)
-        details.add(cocktail.glass)
+        if (!cocktail.garnish.isNullOrEmpty()) details.add(cocktail.garnish.uppercase())
+        details.add(cocktail.glass.uppercase())
 
         for (detail in details) {
             val textView = TextView(this).apply {
                 text = formatDetailText(detail)
-                textSize = 14f
+                textSize = 12f
                 setTextColor(Color.BLACK)
                 setTypeface(null, Typeface.BOLD)
             }
@@ -174,9 +173,25 @@ class MainActivity : AppCompatActivity() {
             recipeLayout.addView(separator)
         }
 
+        // Add the image
+        val imageView = android.widget.ImageView(this).apply {
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                0
+            ).apply {
+                weight = 1f // Proportionally adjust the image size
+                setMargins(0, 8, 0, 8)
+            }
+            setImageResource(resources.getIdentifier(cocktail.image.substringBefore("."), "drawable", packageName))
+            scaleType = android.widget.ImageView.ScaleType.CENTER_CROP // Ensure the image fills its container
+            adjustViewBounds = true // Keep the aspect ratio
+        }
+        recipeLayout.addView(imageView)
+
         recipeDetailsContainer.addView(recipeLayout)
         activeCocktails[cocktail] = recipeLayout
     }
+
 
     /**
      * Formats detail text to apply different colors to the dose inside parentheses.
@@ -190,12 +205,19 @@ class MainActivity : AppCompatActivity() {
             val start = it.range.first
             val end = it.range.last + 1
             spannable.setSpan(
-                android.text.style.ForegroundColorSpan(Color.RED), // Color for ml dose
+                android.text.style.ForegroundColorSpan(Color.BLACK), // Color for ml dose
+                start,
+                end,
+                android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            spannable.setSpan(
+                android.text.style.StyleSpan(Typeface.BOLD), // Make the text bold
                 start,
                 end,
                 android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             )
         }
+
         return spannable
     }
 

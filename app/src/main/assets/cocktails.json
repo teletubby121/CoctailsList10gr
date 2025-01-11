@@ -9,7 +9,8 @@
     "juice": "Lime (20)",
     "bitters": "Orange Bitters (2)",
     "garnish": "Orange, Pineapple",
-    "glass": "Collins"
+    "glass": "Collins",
+    "image": "mithodia.jpg"
   },
   {
     "title": "ζητα",
@@ -21,7 +22,8 @@
     "juice": "Lime (20)",
     "bitters": "Mint Bitters (1)",
     "garnish": "lime, mint",
-    "glass": "Collins"
+    "glass": "Collins",
+    "image": "zita.jpg"
   },
   {
     "title": "καμειρος",
@@ -34,7 +36,8 @@
     "bitters": "Grapefruit Bitters (2)",
     "topUp": "Grapefruit Soda (20)",
     "garnish": "mint, berries",
-    "glass": "Old Fashion"
+    "glass": "Collins",
+    "image": "kamiros.jpg"
   },
   {
     "title": "ιαλυσος",
@@ -47,7 +50,8 @@
     "bitters": "Mint Bitters (1)",
     "topUp": "Tonic (20)",
     "garnish": "mint, lime",
-    "glass": "Collins"
+    "glass": "Collins",
+    "image": "ialisos.jpg"
   },
   {
     "title": "λινδος",
@@ -60,19 +64,21 @@
     "bitters": "Grapefruit Bitters (2)",
     "topUp": "Tonic (30)",
     "garnish": "thyme, berries",
-    "glass": "Collins"
+    "glass": "Collins",
+    "image": "lindos.jpg"
   },
   {
     "title": "φαιδρα",
     "base": "Rum (50)",
-    "liqueur1": "Chambord (15)",
+    "liqueur1": "Chambord (20)",
     "liqueur2": "Xante (15)",
-    "puree": "Strawberry Puree (20)",
+    "puree": "Strawberry Puree (15)",
     "syrup": "Lavender (10)",
     "juice": "Lime (20)",
     "bitters": "Peach Bitters (2)",
     "garnish": "rosemary, anise",
-    "glass": "Old Fashion"
+    "glass": "Old Fashion",
+    "image": "faidra.jpg"
   },
   {
     "title": "γκρεκο",
@@ -84,7 +90,8 @@
     "juice": "Lime (15)",
     "bitters": "Orange Bitters (2)",
     "garnish": "cherry, berries",
-    "glass": "Old Fashion"
+    "glass": "Old Fashion",
+    "image": "greko.jpg"
   },
   {
     "title": "γαλαζιος δουναβης",
@@ -95,19 +102,21 @@
     "juice": "Lime (15)",
     "bitters": "Peach Bitters (2)",
     "garnish": "basil, fig",
-    "glass": "Old Fashion"
+    "glass": "Old Fashion",
+    "image": "galaziosdounavis.jpg"
   },
   {
     "title": "κυβερνητης",
     "base": "Gin (50)",
     "liqueur1": "Sage Liqueur (15)",
     "liqueur2": "Mastiha (15)",
-    "puree": "Cherry Puree (20)",
-    "syrup": "White Cane Sugar (10)",
+    "puree": "Cherry Puree (15)",
+    "syrup": "White Cane Sugar (5)",
     "juice": "Lime (20)",
     "bitters": "Angostura Bitters (2)",
     "garnish": "cherry, lime",
-    "glass": "Old Fashion"
+    "glass": "Wine Glass",
+    "image": "kivernitis.jpg"
   },
   {
     "title": "νορμα",
@@ -118,7 +127,8 @@
     "juice": "Lime (20)",
     "bitters": "Orange Bitters (1)",
     "garnish": "thyme, anise",
-    "glass": "Old Fashion"
+    "glass": "Wine Glass",
+    "image": "norma.jpg"
   },
   {
     "title": "ροδος",
@@ -131,7 +141,8 @@
     "bitters": "Angostura Bitters (2)",
     "topUp": "Bergamot Soda (20)",
     "garnish": "tangerine, thyme",
-    "glass": "Coupe"
+    "glass": "Coupe",
+    "image": "rodos.jpg"
   },
   {
     "title": "υποσχεση την αυγή",
@@ -143,30 +154,33 @@
     "juice": "Lime (20)",
     "bitters": "Grapefruit Bitters (2)",
     "garnish": "bergamot, fig",
-    "glass": "Coupe"
+    "glass": "Coupe",
+    "image": "iposxesi.jpg"
   },
   {
     "title": "ποτε την Κυριακή",
     "base": "Gin (50)",
     "liqueur1": "Grapefruit Liqueur (20)",
     "liqueur2": "Sweet Vermouth (15)",
-    "puree": "Passion Fruit Puree (20)",
+    "puree": "Passion Fruit Puree (15)",
     "syrup": "Basil Syrup (10)",
     "juice": "Lime (20)",
     "bitters": "Mint Bitters (1)",
     "garnish": "basil, grapefruit",
-    "glass": "Coupe"
+    "glass": "Old Fashion",
+    "image": "potetinkiriaki.jpg"
   },
   {
     "title": "καλλιροη",
-    "base": "Gin (50)",
+    "base": "Gin (40)",
     "liqueur1": "Passoa (15)",
     "liqueur2": "Cointreau (15)",
     "puree": "Peach Puree (20)",
     "syrup": "Brown Cane Sugar (10)",
     "juice": "Lime (20)",
-    "bitters": "Orange Bitters (1)",
-    "garnish": "orange, berries",
-    "glass": "Coupe"
+    "bitters": "Peach Bitters (1)",
+    "garnish": "apple, bergamot",
+    "glass": "Coupe",
+    "image": "kaliroi.jpg"
   }
 ]

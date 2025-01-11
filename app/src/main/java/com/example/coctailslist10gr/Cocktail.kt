@@ -11,6 +11,7 @@ data class Cocktail(
     val bitters: String?,
     val topUp: String?,
     val garnish: String?,
-    val glass: String
+    val glass: String,
+    val image: String
 )
 
