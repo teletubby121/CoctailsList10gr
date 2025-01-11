@@ -1,7 +1,6 @@
 package com.example.coctailslist10gr
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -24,13 +23,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        // Enable fullscreen and hide the status bar
-        window.decorView.systemUiVisibility = (
-                View.SYSTEM_UI_FLAG_FULLSCREEN
-                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                )
 
         // Initialize views
         buttonContainer = findViewById(R.id.buttonContainer)
@@ -71,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         for (cocktail in cocktailList) {
             val button = Button(this).apply {
-                text = cocktail.name
+                text = cocktail.title
                 layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
@@ -80,14 +72,38 @@ class MainActivity : AppCompatActivity() {
                 }
                 setOnClickListener {
                     // Show ingredients for the clicked cocktail
-                    showIngredients(cocktail.ingredients)
+                    showIngredients(cocktail)
                 }
             }
             buttonContainer.addView(button)
         }
     }
 
-    private fun showIngredients(ingredients: List<String>) {
+    private fun showIngredients(cocktail: Cocktail) {
+        val ingredients = mutableListOf<String>()
+
+        ingredients.add("Base: ${cocktail.base}")
+        if (cocktail.liqueur1.isNotEmpty()) {
+            ingredients.add("${cocktail.liqueur1}: ${cocktail.liqueur1Amount}ml")
+        }
+        if (cocktail.liqueur2.isNotEmpty()) {
+            ingredients.add("${cocktail.liqueur2}: ${cocktail.liqueur2Amount}ml")
+        }
+        if (cocktail.puree.isNotEmpty()) {
+            ingredients.add("${cocktail.puree}: ${cocktail.pureeAmount}ml")
+        }
+        if (cocktail.syrup.isNotEmpty()) {
+            ingredients.add("${cocktail.syrup}: ${cocktail.syrupAmount}ml")
+        }
+        if (cocktail.juice.isNotEmpty()) {
+            ingredients.add("${cocktail.juice}: ${cocktail.juiceAmount}ml")
+        }
+        if (cocktail.bitters.isNotEmpty()) {
+            ingredients.add("${cocktail.bitters}: ${cocktail.bittersAmount}ml")
+        }
+        ingredients.add("Garnish: ${cocktail.garnish}")
+        ingredients.add("Glass: ${cocktail.glass}")
+
         ingredientAdapter.updateIngredients(ingredients)
     }
 }
